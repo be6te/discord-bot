@@ -35,4 +35,5 @@
 
 
 > I won't mind if you take some code to learn or improve but please don't be a skid.
-> Leave a ⭐ for support ;)
+
+  > Leave a ⭐ for support ;)
