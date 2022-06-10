@@ -14,7 +14,7 @@
 
 # Features
 
-- Spanish discord bot and English [Not finished]
+- Spanish discord bot and English [English translation not finished]
 - Roleplay
 - Image commands
 - Welcome Messages
