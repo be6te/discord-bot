@@ -1,0 +1,12 @@
+discord
+discord.py
+discord_components
+requests
+asyncdagpi
+animec
+bs4
+aiohttp
+google-api-python-client
+googletrans
+Pillow
+numpy

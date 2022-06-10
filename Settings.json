@@ -1,0 +1,22 @@
+{
+    "token": "bot-token",
+    "prefix": "n!",
+    "embedcolor": "0xFFFFFF",
+    "loader": [
+        "py",
+        "python",
+        "python3"
+    ],
+    "load": [
+        ".py"
+    ],
+    "Joiner": [{
+        "syntax": [
+            "py",
+            "node .",
+            "$php",
+            "$sudo",
+            "sh.sh"
+        ]
+    }]
+}

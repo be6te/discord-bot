@@ -1,0 +1,30 @@
+{
+    "all": {
+        "nonereason": "The reason was not assigned!"
+    },
+    "banned": {
+        "ban": "User banned:",
+        "bannedby": "Banned by:",
+        "reason": "Reason:",
+        "baneos": "Bans on this server:",
+        "dbbans": "registered users in my database"
+    },
+    "user":{
+        "autoban": "You cannot ban yourself.",
+        "banbot": "You can't ban me haha."
+    },
+    "kick":{
+        "kick": "Kicked user:",
+        "kickedby": "Banned by:",
+        "kickreason": "Reason:",
+        "kicks": "Kicks on this server",
+        "dbkicks": "registered users in my database"
+    },
+    "kickuser": {
+        "autokick": "You can't kick yourself.",
+        "botkick": "You can't kick me using my command lol."
+    },
+    "purge": {
+        "purge": ""
+    }
+}

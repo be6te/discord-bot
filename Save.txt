@@ -1,0 +1,96 @@
+    @commands.command()
+    async def help(self, ctx):
+        try:
+            with open(f'Database/ServerConfigs/{ctx.guild.id}.json') as f:
+                sv = json.load(f) 
+        except:
+            with open(f'Database/ServerConfigs/{ctx.guild.id}.json', 'w') as f:
+                json.dump(default_config, f, indent=4)
+            with open(f'Database/ServerConfigs/{ctx.guild.id}.json') as f:
+                sv = json.load(f)
+
+        embed = discord.Embed(
+            color = int(sv.get('embedcolor'), 16),
+            description = f'''Hey! **{ctx.author.name}** :wave:, Gracias por pedir mi lista de comandos!
+            
+            Actualmente cuento con `4 categorias` y `26 comandos`'''
+        )
+        embed.add_field(name='Moderacion', value=f'''
+`{sv.get('prefix')}ban <@Member> <Reason>`      
+`{sv.get('prefix')}kick <@Member> <Reason>`           
+`{sv.get('prefix')}purge <Amount>` 
+`{sv.get('prefix')}addrank <@Member> <@Rank>`
+`{sv.get('prefix')}unrank <@Member> <@Rank>`           
+        ''',inline=False)
+        embed.add_field(name='Roleplay', value=f'''
+`{sv.get('prefix')}kiss <@Member>`      
+`{sv.get('prefix')}pat <@Member>`           
+`{sv.get('prefix')}slap <@Member>` 
+`{sv.get('prefix')}hug <@Member>`     
+`{sv.get('prefix')}blush`          
+`{sv.get('prefix')}cry`            
+`{sv.get('prefix')}dance`          
+`{sv.get('prefix')}happy`                   
+`{sv.get('prefix')}jposs`
+`{sv.get('prefix')}smile`    
+        ''', inline=False)
+        embed.add_field(name='Utils', value=f'''
+`{sv.get('prefix')}avatar <@Member or None>`
+`{sv.get('prefix')}changecolor <#Hexcolor>`
+`{sv.get('prefix')}changeprefix <Prefix>`
+`{sv.get('prefix')}poll <Question>`
+`{sv.get('prefix')}serversettings`   
+        ''', inline=False)        
+        embed.add_field(name='Image', value=f'''
+`{sv.get('prefix')}ascii <@Member or None>`
+`{sv.get('prefix')}blur <@Member or None>`
+`{sv.get('prefix')}bonk <@Member or None>`
+`{sv.get('prefix')}flip <@Member or None>`
+`{sv.get('prefix')}paint <@Member or None>`
+`{sv.get('prefix')}pixel <@Member or None>`
+        ''', inline=False)
+        embed.set_author(name=f'{ctx.author} - {ctx.guild.name}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text='{}'.format(ctx.guild.name), icon_url=ctx.guild.icon_url)
+        await ctx.send(embed=embed)
+
+
+
+
+
+
+
+        r = requests.get('https://api.github.com/users/{}'.format(user)).json()
+
+        name = r['login']
+        id = r['id']
+        avatar = r['avatar_url']
+        link_profile = r['html_url']
+        type = r['type']
+        admin = r['site_admin']
+        acc_name = r['name']
+        site = r['blog']
+        location = r['location']
+        twitter = r['twitter_username']
+        public_re = r['public_repos']
+        followers = r['followers']
+        following = r['following']
+
+        embed = discord.Embed(
+            color = int(sv.get('embedcolor'), 16)
+        )
+        embed.add_field(name='Username', value=name, inline=True)
+        embed.add_field(name='Nombre', value=acc_name, inline=True)
+        embed.add_field(name='ID', value=id, inline=True)
+        embed.add_field(name='Perfil', value=link_profile, inline=True)
+        embed.add_field(name='Tipo de cuenta', value=type, inline=True)
+        embed.add_field(name='Admin', value=admin, inline=True)
+        embed.add_field(name='Sitio web', value=site, inline=True)
+        embed.add_field(name='Localidad', value=location, inline=True)
+        embed.add_field(name='Twitter', value=twitter, inline=True)
+        embed.add_field(name='Repositorios publicos', value=public_re, inline=True)
+        embed.add_field(name='Followers', value=followers, inline=True)
+        embed.add_field(name='Following', value=following, inline=True)
+
+        embed.set_thumbnail(url=avatar)
+        embed.set_author(name='Github.com', icon_url='https://cdn-icons-png.flaticon.com/512/25/25231.png')
+        await ctx.send(embed=embed)
