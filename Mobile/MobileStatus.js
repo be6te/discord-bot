@@ -12,4 +12,4 @@ client.once('ready', () => {
 });
 
 
-client.login('OTUwODAzMzA0Mzk1NDcyOTU2.G8ji8w.Cv_rfnHFUt0mahEPQX_J9JisLqt_b9ZTIfUr5g')
+client.login('your bot token')
